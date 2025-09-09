@@ -7,7 +7,7 @@ export const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/home" element={<Navigate to="/" />} />
+      <Route path="/home" element={<Navigate to="/" replace />} />
       <Route path="tabs">
         <Route index element={<TabsPage />} />
         <Route path=":tabId" element={<TabsPage />} />
