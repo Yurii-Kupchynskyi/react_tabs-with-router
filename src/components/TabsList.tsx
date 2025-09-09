@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import 'bulma/css/bulma.css';
 import { Tab } from '../types/Tab';
 
 type TabsProps = {

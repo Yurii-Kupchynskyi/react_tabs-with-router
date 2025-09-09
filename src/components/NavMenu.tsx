@@ -1,9 +1,7 @@
-import classNames from 'classnames';
-import { NavLink, useLocation } from 'react-router-dom';
+import cn from 'classnames';
+import { NavLink } from 'react-router-dom';
 
 export const NavMenu = () => {
-  const { pathname } = useLocation();
-
   return (
     <>
       {/* Also requires <html class="has-navbar-fixed-top"> */}
@@ -15,18 +13,21 @@ export const NavMenu = () => {
           <div className="navbar-brand">
             <NavLink
               to="/"
-              className={classNames('navbar-item', {
-                'is-active': pathname === '/',
-              })}
+              className={({ isActive }) =>
+                cn('navbar-item', {
+                  'is-active': isActive,
+                })
+              }
             >
               Home
             </NavLink>
-            {/* And here test say 'should have Tabs link without `is-active` class' */}
             <NavLink
               to="/tabs"
-              className={classNames('navbar-item', {
-                'is-active': pathname.startsWith('/tabs'),
-              })}
+              className={({ isActive }) =>
+                cn('navbar-item', {
+                  'is-active': isActive,
+                })
+              }
             >
               Tabs
             </NavLink>
